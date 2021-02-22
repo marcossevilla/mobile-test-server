@@ -6,7 +6,7 @@ const SeedSchema = Schema({
         type: String,
         required: true
     },
-    expires_at: {
+    expiresAt: {
         type: Schema.Types.Date,
         required: true
     },
@@ -15,7 +15,6 @@ const SeedSchema = Schema({
 
 SeedSchema.method('toJSON', function () {
     const { __v, _id, ...object } = this.toObject();
-    object.uid = _id;
     return object;
 });
 
