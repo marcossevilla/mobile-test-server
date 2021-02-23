@@ -1,23 +1,15 @@
 const { response } = require('express');
 const { generateSeed } = require('../helpers/seed');
 
-const createSeed = async (req, res = response) => {
+const createSeed = async (_, res = response) => {
 
     try {
         const seed = await generateSeed();
-
-        res.json({
-            ok: true,
-            seed: seed,
-        });
+        res.json(seed);
 
     } catch (error) {
         console.error(error);
-
-        res.status(500).json({
-            ok: false,
-            message: 'Something went wrong...'
-        });
+        res.status(500).json({ message: 'Something went wrong...' });
     }
 
 }
