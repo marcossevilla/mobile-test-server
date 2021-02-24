@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "env TZ='America/Managua' node index.js",
-    "start:dev": "env TZ='America/Managua' nodemon index.js"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
